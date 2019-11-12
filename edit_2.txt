@@ -1,0 +1,20 @@
+int led_status = 0;
+int switc = D0;
+int led = D1;
+
+x = digitalRead(D0)
+void setup() {
+  pinMode(switc, INPUT_PULLUP);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  if(x == 1){
+      digitalWrite(led, HIGH);
+      led_status = 1
+      }
+  else{
+      digitalWrite(led, LOW);
+      led_status = 0
+      }
+}
