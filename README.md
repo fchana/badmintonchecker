@@ -13,7 +13,7 @@ check badminton court
   - Power supply 1 ea<br><br>
 
 
-<h2>Developer</h2><br>
+# Developer
   - 62070042 นาย ชนาธิป อมรชีวศิลปกุล <br><br>
   - 62070073 นาย ทวีศักดิ์ จันทร์อำพล <br><br>
   - 62070108 นาย บริบูรณ์ ศรีเอนกราธา <br><br>
