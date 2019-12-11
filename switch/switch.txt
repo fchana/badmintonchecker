@@ -8,6 +8,8 @@ void setup() {
   Serial.begin(9600);
   pinMode(D0, INPUT);
   pinMode(D1, OUTPUT);
+  pinMode(D2, INPUT);
+  pinMode(D3, OUTPUT);
   Serial.begin(115200); Serial.println();
   Serial.println(LINE.getVersion());
   WiFi.begin(SSID, PASSWORD);
@@ -23,11 +25,20 @@ void loop() {
   Serial.println(digitalRead(D0));
   if(digitalRead(D0) == LOW){
     digitalWrite(D1, LOW);
-    Line.notify('court is empty')
+    Line.notify('court 1 is empty')
   }
   else{
     digitalWrite(D1, HIGH);
-    Line.notify('court is full')
+    Line.notify('court 1 is full')
+  }
+  Serial.println(digitalRead(D0));
+  if(digitalRead(D2) == LOW){
+    digitalWrite(D3, LOW);
+    Line.notify('court 2 is empty')
+  }
+  else{
+    digitalWrite(D3, HIGH);
+    Line.notify('court 2 is full')
   }
 
 }
