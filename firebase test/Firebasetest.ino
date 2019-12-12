@@ -29,7 +29,7 @@ void setup() {
 void loop() {
   if(digitalRead(D0) == 0){
     if(digitalRead(D5) == 0){
-      court1 = 0
+      court1 = 0;
       digitalWrite(D5, HIGH);
     }
   else{
@@ -37,5 +37,6 @@ void loop() {
       court1 = 1;
       digitalWrite(D5, LOW);
     }
+  }
   }
 }
