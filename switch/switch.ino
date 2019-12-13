@@ -39,11 +39,6 @@ void loop() {
       court1 = 0;
       st += 1;
       digitalWrite(D5, HIGH);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court1 = ");
-      Serial.println(digitalRead(D0));
     }
   }
   else{
@@ -51,11 +46,6 @@ void loop() {
       court1 = 1;
       st += 1;
       digitalWrite(D5, LOW);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court1 = ");
-      Serial.println(digitalRead(D0));
     }
   }
   if(digitalRead(D1) == 0){
@@ -63,11 +53,6 @@ void loop() {
       court2 = 0;
       st += 1;
       digitalWrite(D6, HIGH);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court2 = ");
-      Serial.println(digitalRead(D1));
     }
   }
   else{
@@ -75,11 +60,6 @@ void loop() {
       court2 = 1;
       st += 1;
       digitalWrite(D6, LOW);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court2 = ");
-      Serial.println(digitalRead(D1));
     }
   }
   if(digitalRead(D2) == 0){
@@ -87,11 +67,6 @@ void loop() {
       court3 = 0;
       st += 1;
       digitalWrite(D7, HIGH);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court3 = ");
-      Serial.println(digitalRead(D2));
     }
   }
   else{
@@ -99,11 +74,6 @@ void loop() {
       court3 = 1;
       st += 1;
       digitalWrite(D7, LOW);
-      Serial.print(court1);
-      Serial.print(court2);
-      Serial.println(court3);
-      Serial.print("Court3 = ");
-      Serial.println(digitalRead(D2));
     }
   }
 
