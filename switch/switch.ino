@@ -3,6 +3,8 @@
 #define SSID        "oweninwza"
 #define PASSWORD    "0967906611"
 #define LINE_TOKEN  "IsZu1w8h8rcNKiFIWBX3EpFhwrL2sd7P5XKzjz0bc1G"
+#define FIREBASE_HOST "fir-batminton.firebaseio.com"
+#define FIREBASE_AUTH "PclJoL7BEop8SDgTAbxg01vFdiqsUocdfbrqyh58"
 int court1 = 0;
 int court2 = 0;
 int court3 = 0;
@@ -10,7 +12,6 @@ int st = 0;
 int sted = 3;
 
 void setup() {
-  Serial.begin(9600);
   pinMode(D0, INPUT);
   pinMode(D1, INPUT);
   pinMode(D2, INPUT);
@@ -25,9 +26,14 @@ void setup() {
   Serial.printf("\nWiFi connected\nIP : ");
   Serial.println(WiFi.localIP());  
   LINE.setToken(LINE_TOKEN);
+  LINE.notify("Sever has online");
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
 }
 
 void loop() {
+  Firebase.setInt("court1", court1);
+  Firebase.setInt("court2", court2);
+  Firebase.setInt("court3", court3);
   if(digitalRead(D0) == 0){
     if(digitalRead(D5) == 0){
       court1 = 0;
@@ -96,7 +102,7 @@ void loop() {
       Serial.print(court1);
       Serial.print(court2);
       Serial.println(court3);
-      Serial.print("Court3 = ")
+      Serial.print("Court3 = ");
       Serial.println(digitalRead(D2));
     }
   }
