@@ -10,9 +10,6 @@ int court2 = 0;
 int court3 = 0;
 
 void setup() {
-  Firebase.setInt("court1", court1);
-  Firebase.setInt("court2", court2);
-  Firebase.setInt("court3", court3);
   pinMode(D0, INPUT);
   pinMode(D1, OUTPUT);  
   Serial.begin(115200); Serial.println();
@@ -27,6 +24,9 @@ void setup() {
 }
 
 void loop() {
+  Firebase.setInt("court1", court1);
+  Firebase.setInt("court2", court2);
+  Firebase.setInt("court3", court3);
   if(digitalRead(D0) == 0){
     if(digitalRead(D5) == 0){
       court1 = 0;
