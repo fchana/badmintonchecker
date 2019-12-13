@@ -32,11 +32,35 @@ void loop() {
       court1 = 0;
       digitalWrite(D5, HIGH);
     }
+  }
   else{
     if(digitalRead(D5) == 1){
       court1 = 1;
       digitalWrite(D5, LOW);
     }
   }
+  if(digitalRead(D1) == 0){
+    if(digitalRead(D6) == 0){
+      court2 = 0;
+      digitalWrite(D6, HIGH);
+    }
+  }
+  else{
+    if(digitalRead(D6) == 1){
+      court2 = 1;
+      digitalWrite(D6, LOW);
+    }
+  }
+  if(digitalRead(D2) == 0){
+    if(digitalRead(D7) == 0){
+      court3 = 0;
+      digitalWrite(D7, HIGH);
+    }
+  }
+  else{
+    if(digitalRead(D7) == 1){
+      court3 = 1;
+      digitalWrite(D7, LOW);
+    }
   }
 }
