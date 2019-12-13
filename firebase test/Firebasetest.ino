@@ -30,36 +30,42 @@ void loop() {
   if(digitalRead(D0) == 0){
     if(digitalRead(D5) == 0){
       court1 = 0;
+      Line.notify("Court 1 is empty")
       digitalWrite(D5, HIGH);
     }
   }
   else{
     if(digitalRead(D5) == 1){
       court1 = 1;
+      Line.notify("Court 1 is full")
       digitalWrite(D5, LOW);
     }
   }
   if(digitalRead(D1) == 0){
     if(digitalRead(D6) == 0){
       court2 = 0;
+      Line.notify("Court 2 is empty")
       digitalWrite(D6, HIGH);
     }
   }
   else{
     if(digitalRead(D6) == 1){
       court2 = 1;
+      Line.notify("Court 2 is full")
       digitalWrite(D6, LOW);
     }
   }
   if(digitalRead(D2) == 0){
     if(digitalRead(D7) == 0){
       court3 = 0;
+      Line.notify("Court 3 is empty")
       digitalWrite(D7, HIGH);
     }
   }
   else{
     if(digitalRead(D7) == 1){
       court3 = 1;
+      Line.notify("Court 3 is full")
       digitalWrite(D7, LOW);
     }
   }
