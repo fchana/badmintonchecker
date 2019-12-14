@@ -86,8 +86,10 @@ void loop() {
       digitalWrite(D7, LOW);
     }
   }
-  showtext(st, sted, court1, court2, court3);
-  sted += 1;
+  if(st - sted == 1){
+    showtext(st, sted, court1, court2, court3);
+    sted += 1;
+  }
 }
 
 void showtext(int st, int sted, int court1, int court2, int court3) {
@@ -96,41 +98,39 @@ void showtext(int st, int sted, int court1, int court2, int court3) {
    2 send Line's notification
    about status of court badminton.
   */
-  if(st - sted == 1){
-    if(court1 == 0){
-      if(court2 == 0){
-        if(court3 == 0){
-          LINE.notify("All court are empty.");
-        }
-        else{
-          LINE.notify("Court1 and court2 are empty, court3 is full.");
-        } 
+  if(court1 == 0){
+    if(court2 == 0){
+      if(court3 == 0){
+        LINE.notify("All court are empty.");
       }
       else{
-        if(court3 == 0){
-          LINE.notify("Court1 and court3 are empty, court2 is full.");
-        }
-        else{
-          LINE.notify("Court1 is empty, court3 and court2 are full.");
-        }
+        LINE.notify("Court1 and court2 are empty, court3 is full.");
+      } 
+    }
+    else{
+      if(court3 == 0){
+        LINE.notify("Court1 and court3 are empty, court2 is full.");
+      }
+      else{
+        LINE.notify("Court1 is empty, court3 and court2 are full.");
+      }
+    }
+  }
+  else{
+    if(court2 == 0){
+      if(court3 == 0){
+        LINE.notify("Court2 and court3 are empty, court1 is full.");
+      }
+      else{
+        LINE.notify("Court2 is empty, court1 and court3 are full.");
       }
     }
     else{
-      if(court2 == 0){
-        if(court3 == 0){
-          LINE.notify("Court2 and court3 are empty, court1 is full.");
-        }
-        else{
-          LINE.notify("Court2 is empty, court1 and court3 are full.");
-        }
+      if(court3 == 0){
+        LINE.notify("Court3 is empty, court1 and court2 are full.");
       }
       else{
-        if(court3 == 0){
-          LINE.notify("Court3 is empty, court1 and court2 are full.");
-        }
-        else{
-          LINE.notify("All court are full.");
-        }
+        LINE.notify("All court are full.");
       }
     }
   }
