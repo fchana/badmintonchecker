@@ -12,12 +12,10 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-      var dataref = firebase.database()
-      var count = dataref.ref()
-      count.on("value", function(snap){
+      var count = firebase.database().ref();
+    count.on("value", function(snap){
       var count = snap.val()
       var count1 = count.court1
-      console.log(count)
       if(count1 == "1"){
           document.getElementById("lightStatus").innerHTML = "Court 1 is full";
           document.getElementById("lit1").style.backgroundColor = "red";
@@ -25,7 +23,6 @@ firebase.initializeApp(firebaseConfig);
           document.getElementById("lightStatus").innerHTML = "Court 1 is empty";
           document.getElementById("lit1").style.backgroundColor = "#33FF00"
       }
-
       var count2 = count.court2
       if(count2 == "1"){
           document.getElementById("lightStatus2").innerHTML = "Court 2 is full";
@@ -34,7 +31,6 @@ firebase.initializeApp(firebaseConfig);
           document.getElementById("lightStatus2").innerHTML = "Court 2 is empty";
           document.getElementById("lit2").style.backgroundColor = "#33FF00";
       }
-      console.log(count2)
       var count3 = count.court3
       if(count3 == "1"){
           document.getElementById("lightStatus3").innerHTML = "Court 3 is full";
