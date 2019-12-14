@@ -9,7 +9,7 @@ int court1 = 0;
 int court2 = 0;
 int court3 = 0;
 int st = 0;
-int sted = 3;
+int sted = 0;
 
 void setup() {
   /*
@@ -51,7 +51,7 @@ void loop() {
       digitalWrite(D5, LOW);
     }
   }
-  else{
+  else {
     if(digitalRead(D5) == 0) {
       court1 = 1;
       st += 1;
