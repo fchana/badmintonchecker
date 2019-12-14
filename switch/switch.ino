@@ -40,7 +40,7 @@ void setup() {
 void loop() {
   /*
   This function is main function of my project
-   that used check court badminton's status.
+   that used check court's status.
   */
   put2base(court1, court2, court3);
 
@@ -86,6 +86,7 @@ void loop() {
       digitalWrite(D7, HIGH);
     }
   }
+
   if(st - sted == 1) {
     showtext(st, sted, court1, court2, court3);
     sted += 1;
@@ -93,6 +94,10 @@ void loop() {
 }
 
 void put2base(int court1, int court2, int court3) {
+  /*
+  Put court's status to firebase
+   that kept court's status.
+  */
   Firebase.setInt("court1", court1);
   Firebase.setInt("court2", court2);
   Firebase.setInt("court3", court3);  
