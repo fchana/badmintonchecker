@@ -25,13 +25,8 @@ void setup() {
   pinMode(D5, OUTPUT);
   pinMode(D6, OUTPUT);
   pinMode(D7, OUTPUT);
-  Serial.begin(115200); Serial.println();
-  Serial.println(LINE.getVersion());
   WiFi.begin(SSID, PASSWORD);
-  Serial.printf("WiFi connecting to %s\n",  SSID);
   while(WiFi.status() != WL_CONNECTED) { Serial.print("."); delay(400); }
-  Serial.printf("\nWiFi connected\nIP : ");
-  Serial.println(WiFi.localIP());  
   LINE.setToken(LINE_TOKEN);
   LINE.notify("Sever has online");
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
