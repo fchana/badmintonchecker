@@ -13,6 +13,14 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
   firebase.analytics();
       var count = firebase.database().ref();
+      var comment = firebase.database().ref('/comuser');
+    document.getElementById("sendcom").onclick = function(){
+      var lcom = document.getElementById('info').value;
+      comment.push({
+        comment: lcom,
+      });
+      window.location.reload();
+    };
     count.on("value", function(snap){
       var count = snap.val()
       var count1 = count.court1
