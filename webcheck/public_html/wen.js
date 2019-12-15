@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
       var count = firebase.database().ref();
       var comment = firebase.database().ref('/comuser');
     document.getElementById("sendcom").onclick = function(){
+      /* Report Problem Function */
+      /* ฟังก์ชัน การส่งข้อมูลขึ้น Database ของ report problem */
       var lcom = document.getElementById('info').value;
       comment.push({
         comment: lcom,
@@ -22,6 +24,7 @@ firebase.initializeApp(firebaseConfig);
       window.location.reload();
     };
     count.on("value", function(snap){
+      /* funntion Status courts */
       var count = snap.val()
       var count1 = count.court1
       if(count1 == "1"){
